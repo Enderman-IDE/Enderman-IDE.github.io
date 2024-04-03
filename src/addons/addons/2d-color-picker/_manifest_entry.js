@@ -2,7 +2,7 @@
 const manifest = {
   "editorOnly": true,
   "name": "2D color picker",
-  "description": "Replaces saturation and brightness sliders in the costume editor with a 2D color picker. Hold Shift while dragging the cursor to change the values on a single axis.",
+  "description": "Wow Joe 2D",
   "tags": [],
   "credits": [
     {
@@ -19,6 +19,6 @@ const manifest = {
       "url": "style.css"
     }
   ],
-  "enabledByDefault": false
+  "enabledByDefault": true
 };
 export default manifest;

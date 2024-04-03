@@ -21,7 +21,7 @@ const manifest = {
       "link": "https://scratch.mit.edu/users/GarboMuffin/"
     }
   ],
-  "enabledByDefault": false,
+  "enabledByDefault": true,
   "dynamicDisable": true,
   "userscripts": [
     {
@@ -42,7 +42,7 @@ const manifest = {
       "id": "paddingSize",
       "type": "integer",
       "min": 50,
-      "default": 100,
+      "default": 125,
       "max": 200
     },
     {
@@ -51,7 +51,7 @@ const manifest = {
       "id": "cornerSize",
       "type": "integer",
       "min": 0,
-      "default": 100,
+      "default": 150,
       "max": 300
     },
     {
@@ -60,7 +60,7 @@ const manifest = {
       "id": "notchSize",
       "type": "integer",
       "min": 0,
-      "default": 100,
+      "default": 85,
       "max": 150
     }
   ],
@@ -86,13 +86,13 @@ const manifest = {
       }
     },
     {
-      "name": "3.0 Flat",
+      "name": "Test",
       "id": "flat3",
-      "description": "Scratch 3.0 blocks with notches and corners removed",
+      "description": "A test for JoeCode Addons.",
       "values": {
         "paddingSize": 100,
-        "cornerSize": 0,
-        "notchSize": 0
+        "cornerSize": 50,
+        "notchSize": 25
       }
     },
     {
