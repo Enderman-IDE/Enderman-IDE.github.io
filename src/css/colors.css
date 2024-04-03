@@ -15,7 +15,7 @@ $ui-black-transparent: var(--ui-black-transparent, $ui-black-transparent-default
 $text-primary: var(--text-primary, hsla(225, 15%, 40%, 1)); /* #575E75 */
 $text-primary-transparent: hsla(225, 15%, 40%, 0.75);
 
-$motion-primary: hsla(194, 100%, 50%, 1); /* #00c3ff */
+$motion-primary: hsla(215, 100%, 95%, 1); /* joeing */
 $motion-tertiary: hsla(203, 100%, 39%, 1); /* #007bc7 */
 $motion-transparent: hsla(194, 100%, 50%, 0.35); /* 35% transparent version of motion-primary */
 $motion-light-transparent: hsla(203, 100%, 39%, 0.15); /* 15% transparent version of motion-primary */
