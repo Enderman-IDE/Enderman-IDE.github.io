@@ -22,7 +22,7 @@ $motion-light-transparent: hsla(203, 100%, 39%, 0.15); /* 15% transparent versio
 
 /* opt-in theme overrides */
 $motion-primary-dark: #DE980D; /*top bar color when in dark mode*/
-$ui-primary-light: hsla(215, 100%, 95%, 1);
+$ui-primary-light: hsla(38, 89%, 46%, 1);
 $ui-secondary-light: hsla(215, 75%, 95%, 1);
 $ui-tertiary-light: hsla(215, 50%, 90%, 1);
 $text-primary-light: hsla(225, 15%, 40%, 1);
