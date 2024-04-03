@@ -1,4 +1,4 @@
-$ui-primary: var(--ui-primary, hsla(12.5, 56%, 100%, 1)); /* #E5F0FF */
+$ui-primary: var(--ui-primary, #eba417);
 $ui-secondary: var(--ui-secondary, hsla(215, 75%, 95%, 1)); /* #E9F1FC */
 $ui-tertiary: var(--ui-tertiary, hsla(215, 50%, 90%, 1)); /* #D9E3F2 */
 
