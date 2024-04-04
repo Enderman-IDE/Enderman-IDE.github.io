@@ -167,7 +167,7 @@ module.exports = [
                 chunks: ['editor'],
                 template: 'src/playground/index.ejs',
                 filename: 'editor.html',
-                title: 'PenguinMod - Editor',
+                title: 'JoeMod - Editor',
                 ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({
