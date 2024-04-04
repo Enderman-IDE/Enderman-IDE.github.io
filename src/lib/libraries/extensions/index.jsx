@@ -159,6 +159,9 @@ const urlParams = new URLSearchParams(location.search);
 const IsLocal = String(window.location.href).startsWith(`http://localhost:`);
 const IsLiveTests = urlParams.has('livetests');
 
+import canvasExtensionBanner from './penguinmod/extensions/CanvasExtensionMenu.png';
+import canvasExtensionIcon from './penguinmod/extensions/CanvasSmall.png';
+
 const menuItems = [
     {
         name: (
@@ -1360,6 +1363,23 @@ if (IsLocal || IsLiveTests) {
             credits: 'Vadik1',
             featured: true
         }
+           {
+        name: 'testworx',
+        extensionId: 'https://extensions.turbowarp.org/pointerlock.js',
+        tags: ['turbowarp'],
+        insetIconURL: turbowarpIcon,
+        iconURL: pointerlockThumb,
+        description: (
+            <FormattedMessage
+                defaultMessage="This is a test extension."
+                description="TESTYS"
+                id="gui.extension.pointerlock.description"
+            />
+        ),
+        featured: true,
+        internetConnectionRequired: false,
+        twDeveloper: 'CharcoalAfterlife'
+    },
     ];
     extras.forEach(ext => {
         menuItems.push(ext);
