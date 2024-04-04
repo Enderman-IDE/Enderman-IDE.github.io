@@ -64,7 +64,7 @@ const manifest = {
       "max": 150
     }
   ],
-  "presets": [
+  "presets": 
     {
       "name": "3.0 Blocks",
       "id": "default3",
@@ -105,6 +105,14 @@ const manifest = {
         "notchSize": 0
       }
     }
-  ]
-};
+        "name": "JoeCode",
+        "id": "joecode",
+        "description": "JoeCode Main Settings",
+        "values": {
+          "paddingSize": 125,
+          "cornerSize": 150,
+          "notchSize": 85
+        }
+    }
+;
 export default manifest;
