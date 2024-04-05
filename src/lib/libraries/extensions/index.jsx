@@ -163,6 +163,26 @@ const menuItems = [
     {
         name: (
             <FormattedMessage
+                defaultMessage="JoeMod Extra Extensions"
+                description="Name of library item to open the Extra Extensions gallery"
+                id="jm.extraLibraryExtensions.name"
+            />
+        ),
+        href: 'https://enderman-ide.github.io/joecode-extension-gallery/',
+        extensionId: 'special_joemodExtensionLibrary',
+        iconURL: joemodLibraryExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="See extra extensions not listed here and extensions by the community!"
+                description="Description of library item to open the Extra Extensions gallery"
+                id="jm.extraLibraryExtensions.description"
+            />
+        ),
+        tags: ['joemod', 'library'],
+        featured: true
+    },
+        name: (
+            <FormattedMessage
                 defaultMessage="Music"
                 description="Name for the 'Music' extension"
                 id="gui.extension.music.name"
