@@ -6,7 +6,7 @@ $ui-tertiary: var(--ui-tertiary, #f2ec94);
 /* that line is why everything was wHITE */
 $ui-modal-overlay: var(--ui-modal-overlay, #EBA417); /* fix */
 
-$ui-white: #ffffff;
+$ui-white: #fcff4a;
 $ui-white-dim: hsla(0, 100%, 100%, 0.75); /* 25% transparent version of ui-white */
 $ui-white-transparent: hsla(0, 100%, 100%, 0.25); /* 25% transparent version of ui-white */
 $ui-transparent: hsla(0, 100%, 100%, 0); /* 25% transparent version of ui-white */
