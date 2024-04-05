@@ -6,7 +6,7 @@ $ui-tertiary: var(--ui-tertiary, #f2ec94);
 /* that line is why everything was wHITE */
 $ui-modal-overlay: var(--ui-modal-overlay, #EBA417); /* fix */
 
-$ui-white: #fcff4a;
+$ui-white: #fff;
 $ui-white-dim: hsla(0, 100%, 100%, 0.75); /* 25% transparent version of ui-white */
 $ui-white-transparent: hsla(0, 100%, 100%, 0.25); /* 25% transparent version of ui-white */
 $ui-transparent: hsla(0, 100%, 100%, 0); /* 25% transparent version of ui-white */
@@ -17,7 +17,7 @@ $ui-black-transparent: var(--ui-black-transparent, $ui-black-transparent-default
 $text-primary: var(--text-primary, hsla(225, 15%, 40%, 1)); /* #575E75 */
 $text-primary-transparent: hsla(225, 15%, 40%, 0.75);
 
-$motion-primary: hsla(12.5, 56%, 100%, 1); /* joeing */
+$motion-primary: #EBA417; /* joeing */
 $motion-tertiary: hsla(203, 100%, 39%, 1); /* #007bc7 */
 $motion-transparent: hsla(194, 100%, 50%, 0.35); /* 35% transparent version of motion-primary */
 $motion-light-transparent: hsla(203, 100%, 39%, 0.15); /* 15% transparent version of motion-primary */
@@ -51,4 +51,4 @@ $extensions-tertiary: hsla(203, 100%, 39%, 1);
 $extensions-transparent: hsla(194, 100%, 50%, 0.35); /* 35% transparent version of extensions-primary */
 $extensions-light: hsla(203, 100%, 39%, 1); /* opaque version of extensions-transparent, on white bg */
 
-$drop-highlight: hsla(194, 100%, 77%, 1); /* lighter than motion-primary */
+$drop-highlight: #f2ec94; /* lighter than  */
