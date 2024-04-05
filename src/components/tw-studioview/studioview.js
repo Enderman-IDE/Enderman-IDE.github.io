@@ -1,3 +1,36 @@
+var StudioView = function (studioId) {
+    this.studioId = studioId;
+    this.offset = 0;
+    this.ended = false;
+    this.loadingPage = false;
+    this.unusedPlaceholders = [];
+
+    this.root = document.createElement('div');
+    this.root.className = styles.studioviewRoot;
+    this.projectList = document.createElement('div');
+    this.projectList.className = styles.studioviewList;
+    this.root.appendChild(this.projectList);
+
+    if ('IntersectionObserver' in window) {
+        this.intersectionObserver = new IntersectionObserver(this.handleIntersection.bind(this), {
+            root: this.projectList
+        });
+        this.loadNextPageObserver = new IntersectionObserver(this.handleLoadNextPageIntersection.bind(this), {
+            root: this.projectList
+        });
+    } else {
+        this.intersectionObserver = null;
+        this.loadNextPageObserver = null;
+    }
+
+    // will be filled in by studioview.jsx
+    this.messages = {
+        AUTHOR_ATTRIBUTION: '',
+        PROJECT_HOVER_TEXT: '',
+        LOAD_ERROR: ''
+    };
+};
+
 StudioView.STUDIO_API = 'https://api.github.com/repos/Enderman-IDE/Enderman-IDE.github.io/commits';
 
 StudioView.prototype.loadNextPage = function () {
