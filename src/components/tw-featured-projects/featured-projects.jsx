@@ -1,75 +1,52 @@
-import bindAll from 'lodash.bindall';
-import PropTypes from 'prop-types';
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import StudioView from '../tw-studioview/studioview.jsx';
 import styles from './featured-projects.css';
 import { setProjectId } from '../../lib/tw-navigation-utils.js';
-import classNames from 'classnames';
 
 class FeaturedProjects extends React.Component {
     constructor(props) {
         super(props);
-        bindAll(this, [
-            'handleSelect',
-            'handleOpenProjects'
-        ]);
         this.state = {
-            opened: false,
-            transition: true
+            commits: [],
+            loading: true,
+            error: null
         };
     }
-    componentDidUpdate(prevProps) {
-        if (this.props.projectId === '0' && prevProps.projectId === null) {
-            // eslint-disable-next-line react/no-did-update-set-state
-            this.setState({
-                opened: true,
-                transition: false
-            });
-        }
+
+    componentDidMount() {
+        fetch('https://api.github.com/repos/Enderman-IDE/Enderman-IDE.github.io/commits')
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                }
+                throw new Error('error!!! the response wasnt ok');
+            })
+            .then(commits => this.setState({ commits, loading: false }))
+            .catch(error => this.setState({ error, loading: false }));
     }
-    handleSelect(id) {
-        this.props.setProjectId(id);
+
+    handleSelect(commitId) {
+        console.log('commit selected:', commitId);
     }
-    handleOpenProjects() {
-        this.setState({
-            opened: true
-        });
+
+    renderCommits() {
+        const { commits, loading, error } = this.state;
+        if (loading) return <div>Loading...</div>;
+        if (error) return <div>Error: {error.message}! please report this to our discord.</div>;
+
+        return commits.map((commit, index) => (
+            <div key={index} className={styles.commit} onClick={() => this.handleSelect(commit.sha)}>
+                <div>{commit.commit.message}</div>
+                <div>Author: {commit.commit.author.name}</div>
+            </div>
+        ));
     }
+
     render() {
-        const opened = this.state.opened;
         return (
             <div className={styles.container}>
-                <div
-                    className={classNames(
-                        styles.projects,
-                        {
-                            [styles.opened]: opened,
-                            [styles.transition]: this.state.transition
-                        }
-                    )}
-                >
-                    <StudioView
-                        id={this.props.studio}
-                        onSelect={this.handleSelect}
-                        placeholder={!opened}
-                    />
-                    {opened ? null : (
-                        <div
-                            className={styles.openerContainer}
-                            onClick={this.handleOpenProjects}
-                        >
-                            <div className={styles.openerContent}>
-                                <FormattedMessage
-                                    defaultMessage="Click to view uploaded projects."
-                                    description="Text to view featured projects"
-                                    id="tw.viewFeaturedProjects"
-                                />
-                            </div>
-                        </div>
-                    )}
-                </div>
+                {this.renderCommits()}
             </div>
         );
     }
@@ -77,8 +54,6 @@ class FeaturedProjects extends React.Component {
 
 FeaturedProjects.propTypes = {
     setProjectId: PropTypes.func,
-    projectId: PropTypes.string,
-    studio: PropTypes.string
 };
 
 const mapStateToProps = state => ({
