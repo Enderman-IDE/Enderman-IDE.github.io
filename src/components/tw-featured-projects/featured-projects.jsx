@@ -33,12 +33,25 @@ class FeaturedProjects extends React.Component {
     renderCommits() {
         const { commits, loading, error } = this.state;
         if (loading) return <div>Loading...</div>;
-        if (error) return <div>Error: {error.message}! please report this to our discord.</div>;
+        if (error) return <div>Error: {error.message}! please report this to our discord server!!</div>;
 
-        return commits.map((commit, index) => (
-            <div key={index} className={styles.commit} onClick={() => this.handleSelect(commit.sha)}>
-                <div>{commit.commit.message}</div>
-                <div>Author: {commit.commit.author.name}</div>
+        return commits.map((commit) => (
+            <div key={commit.sha} className={styles.commit}>
+                <div className={styles.authorImage}>
+                    <a href={commit.author?.html_url} target="_blank" rel="noopener noreferrer">
+                        <img className={styles.authorImage} src={commit.committer?.avatar_url} alt={commit.commit.author.name} />
+                    </a>
+                </div>
+                <div className={styles.commitAuthor}>
+                    <a className={styles.authorLink} href={commit.author?.html_url} target="_blank" rel="noopener noreferrer">
+                        {commit.commit.author.name}
+                    </a>
+                </div>
+                <div className={styles.commitMessage}>
+                    <a href={commit.html_url} target="_blank" rel="noopener noreferrer">
+                        {commit.commit.message}
+                    </a>
+                </div>
             </div>
         ));
     }
