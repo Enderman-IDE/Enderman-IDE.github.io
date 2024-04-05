@@ -38,17 +38,17 @@ class FeaturedProjects extends React.Component {
         return commits.map((commit) => (
             <div key={commit.sha} className={styles.commit}>
                 <div className={styles.authorImage}>
-                    <a href={commit.author?.html_url} target="_blank" rel="noopener noreferrer">
-                        <img className={styles.authorImage} src={commit.committer?.avatar_url} alt={commit.commit.author.name} />
+                    <a href={commit.commit.author.html_url || `https://github.com/${commit.commit.author.name}`} target="_blank" rel="noopener noreferrer">
+                        <img className={styles.authorImage} src={commit.author?.avatar_url || 'default-avatar-url'} alt={commit.commit.author.name} />
                     </a>
                 </div>
                 <div className={styles.commitAuthor}>
-                    <a className={styles.authorLink} href={commit.author?.html_url} target="_blank" rel="noopener noreferrer">
+                    <a className={styles.authorLink} href={commit.author?.html_url || `https://github.com/${commit.commit.author.name}`} target="_blank" rel="noopener noreferrer">
                         {commit.commit.author.name}
                     </a>
                 </div>
-                <div className={styles.commitMessage}>
-                    <a href={commit.html_url} target="_blank" rel="noopener noreferrer">
+            <div className={styles.commitMessage}>
+                <a href={commit.html_url} target="_blank" rel="noopener noreferrer">
                         {commit.commit.message}
                     </a>
                 </div>
