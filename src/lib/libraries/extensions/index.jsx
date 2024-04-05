@@ -57,6 +57,7 @@ import galleryIcon from './gallery/gallery.svg';
 import customExtensionIcon from './custom/custom.svg';
 import turbowarpIcon from './penguinmod/extensions/turbowarp_icon.svg';
 import penguinmodLibraryExtensionIcon from './penguinmod/library.svg';
+import joemodLibraryExtensionIcon from './joemod/library.png';
 import sharkpoolGalleryIcon from './penguinmod/sharkpool-library.svg';
 
 import turboBuilderIcon from './penguinmod/turbobuilder.png';
