@@ -41,7 +41,7 @@ const manifest = {
       "name": "Padding size (15-350%)",
       "id": "paddingSize",
       "type": "integer",
-      "min": 15,
+      "min": 0,
       "default": 110,
       "max": 350
     },
