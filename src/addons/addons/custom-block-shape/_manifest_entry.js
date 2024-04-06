@@ -3,7 +3,7 @@ const manifest = {
   "editorOnly": true,
   "noTranslations": true,
   "name": "Customizable block shape",
-  "description": "Adjust the padding, corner radius, and notch height of blocks.",
+  "description": "Change how the blocks look by the padding, corner rounding, and the notch height.",
   "tags": [
     "theme"
   ],
@@ -41,9 +41,9 @@ const manifest = {
       "name": "Padding size (50-200%)",
       "id": "paddingSize",
       "type": "integer",
-      "min": 50,
-      "default": 125,
-      "max": 200
+      "min": 25,
+      "default": 110,
+      "max": 275
     },
     {
       "dynamic": true,
@@ -51,7 +51,7 @@ const manifest = {
       "id": "cornerSize",
       "type": "integer",
       "min": 0,
-      "default": 150,
+      "default": 125,
       "max": 300
     },
     {
@@ -60,18 +60,18 @@ const manifest = {
       "id": "notchSize",
       "type": "integer",
       "min": 0,
-      "default": 85,
+      "default": 88,
       "max": 150
     }
   ],
   "presets": [
     {
-      "name": "3.0 Blocks",
+      "name": "Puzzle3",
       "id": "default3",
-      "description": "The regular appearance of Scratch 3.0 blocks",
+      "description": "The regular appearance of Scratch 3.0 blocks, without the corners.",
       "values": {
         "paddingSize": 100,
-        "cornerSize": 100,
+        "cornerSize": 0,
         "notchSize": 100
       }
     },
@@ -86,13 +86,13 @@ const manifest = {
       }
     },
     {
-      "name": "Test",
+      "name": "JoeCode Default",
       "id": "flat3",
-      "description": "A test for JoeCode Addons.",
+      "description": "The original block shape for JoeCode.",
       "values": {
-        "paddingSize": 100,
-        "cornerSize": 50,
-        "notchSize": 25
+        "paddingSize": 110,
+        "cornerSize": 125,
+        "notchSize": 88
       }
     },
     {
