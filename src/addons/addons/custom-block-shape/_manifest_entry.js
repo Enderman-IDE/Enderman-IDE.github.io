@@ -38,30 +38,30 @@ const manifest = {
   "settings": [
     {
       "dynamic": true,
-      "name": "Padding size (50-200%)",
+      "name": "Padding size (15-350%)",
       "id": "paddingSize",
       "type": "integer",
-      "min": 25,
+      "min": 15,
       "default": 110,
-      "max": 275
+      "max": 350
     },
     {
       "dynamic": true,
-      "name": "Corner size (0-300%)",
+      "name": "Corner size (0-500%)",
       "id": "cornerSize",
       "type": "integer",
       "min": 0,
       "default": 125,
-      "max": 300
+      "max": 500
     },
     {
       "dynamic": true,
-      "name": "Notch height (0-150%)",
+      "name": "Notch Length (0-325%)",
       "id": "notchSize",
       "type": "integer",
       "min": 0,
       "default": 88,
-      "max": 150
+      "max": 325
     }
   ],
   "presets": [
