@@ -195,6 +195,9 @@ MenuItemLink.propTypes = {
 class MenuBar extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            examples: []
+        };
         bindAll(this, [
             'handleClickSeeInside',
             'handleClickNew',
@@ -214,10 +217,17 @@ class MenuBar extends React.Component {
         ]);
     }
     componentDidMount() {
+        this.loadExamples();
         document.addEventListener('keydown', this.handleKeyPress);
     }
     componentWillUnmount() {
         document.removeEventListener('keydown', this.handleKeyPress);
+    }
+    loadExamples() {
+        fetch('./examples/examples.json')
+            .then(response => response.json())
+            .then(data => this.setState({ examples: data }))
+            .catch(error => console.error('Error loading examples:', error));
     }
     handleClickNew() {
         // if the project is dirty, and user owns the project, we will autosave.
@@ -421,6 +431,7 @@ class MenuBar extends React.Component {
         };
     }
     render() {
+        const { examples } = this.state;
         const saveNowMessage = (
             <FormattedMessage
                 defaultMessage="Save now"
@@ -856,6 +867,19 @@ class MenuBar extends React.Component {
                             </div>
                         </div>
                     </div>
+                <div className={classNames(styles.menuBarItem, styles.hoverable)}>
+                    <div>Examples</div>
+                    <MenuBarMenu>
+                        {examples.map(example => (
+                            <MenuItem
+                                key={example.title}
+                                onClick={() => window.location.href = example.file}
+                            >
+                                {example.title}
+                            </MenuItem>
+                        ))}
+                    </MenuBarMenu>
+                </div>
                     <Divider className={classNames(styles.divider)} />
                     {/* {(this.props.authorUsername && this.props.authorUsername !== this.props.username) ? (
                         <AuthorInfo
