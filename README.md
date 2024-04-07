@@ -1,5 +1,8 @@
+<h1 align=center>JoeMod  <img align=center width=30 src=https://avatars.githubusercontent.com/u/165810053?s=200&v=4/> </h1>
+
 scratch-gui modified for use in [TurboWarp](https://turbowarp.org/) then modified for use in [PenguinMod](https://penguinmod.github.io/penguinmod.github.io/) and then for [JoeMod](https://enderman-ide.github.io/)😀
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/PenguinMod/penguinmod.github.io/)
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/Enderman-IDE/Enderman-IDE.github.io)
 ## Setup
 
 See https://docs.turbowarp.org/development/getting-started to setup the complete TurboWarp environment.
