@@ -326,6 +326,14 @@ const menuItems = [
         description: 'Blocks for reading and creating files.',
         featured: true
     },
+        {
+        name: 'Joe Utils',
+        extensionId: 'joeu',
+        iconURL: jgScratchAuthExtensionIcon,
+        tags: ['penguinmod'],
+        description: "Interact with Scratch Authentication to prove the player is a real scratch user.",
+        featured: true
+    },
     {
         name: 'Pen+',
         extensionId: 'https://extensions.penguinmod.com/extensions/ObviousAlexC/PenPlus.js',
