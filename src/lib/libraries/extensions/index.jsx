@@ -328,7 +328,7 @@ const menuItems = [
     },
         {
         name: 'Joe Utils',
-        extensionId: 'joeu',
+        extensionId: 'https://rubyteam.tech/joeutils.js/',
         iconURL: jgScratchAuthExtensionIcon,
         tags: ['penguinmod'],
         description: "Interact with Scratch Authentication to prove the player is a real scratch user.",
