@@ -224,7 +224,7 @@ class MenuBar extends React.Component {
         document.removeEventListener('keydown', this.handleKeyPress);
     }
     loadExamples() {
-        fetch('./examples/examples.json')
+        fetch('/components/menu-bar/examples/examples.json')
             .then(response => response.json())
             .then(data => this.setState({ examples: data }))
             .catch(error => console.error('Error loading examples:', error));
